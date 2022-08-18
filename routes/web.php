@@ -78,11 +78,10 @@ Route::get('/usuarioletra/{usuarioletra}', function ($usuarioletra) {
 })->where('usuario', '[A-Za-z]+' );
 
 
-/*Route::get('/', function () {
-    return view('vista1', ['nombre' => 'juan']);
-});*/
+Route::get('/', 'App\Http\Controllers\InicioController@index');
 
-
+//ejemplo vista
+/*
 if ( view :: exists('vista2')){
     Route::get('/', function () {
         return view('vista2');
@@ -91,7 +90,7 @@ if ( view :: exists('vista2')){
     Route::get('/', function () {
         return view('La vista solicitada no existe puto');
     });
-}
+}*/
 
 
 
