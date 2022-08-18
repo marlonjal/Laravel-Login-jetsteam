@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\view;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,6 +78,30 @@ Route::get('/usuarioletra/{usuarioletra}', function ($usuarioletra) {
 })->where('usuario', '[A-Za-z]+' );
 
 
+/*Route::get('/', function () {
+    return view('vista1', ['nombre' => 'juan']);
+});*/
+
+
+if ( view :: exists('vista2')){
+    Route::get('/', function () {
+        return view('vista2');
+    });
+}else{
+    Route::get('/', function () {
+        return view('La vista solicitada no existe puto');
+    });
+}
+
+
+
+
+
+
+
+
+ 
+//--------------------------------------------------
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
